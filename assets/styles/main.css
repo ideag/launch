@@ -1,0 +1,313 @@
+
+/***********************************************************************************
+  
+Setup
+  
+************************************************************************************/
+
+html,
+body {
+    width: 100%;
+    height: auto;
+    
+    overflow: auto;
+}
+
+/***********************************************************************************
+  
+Typography
+  
+************************************************************************************/
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 38px;
+    
+    margin-bottom: 22px;
+}
+
+h2 {
+    font-size: 28px;
+    
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    
+    margin-bottom: 5px;
+}
+
+h1 a,
+h2 a,
+h3 a {
+    border-bottom: 1px solid;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.4;
+    
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    
+    transition-duration: 0.25s;
+}
+
+p a,
+strong {
+    font-weight: 700;
+}
+
+p a {
+    border-bottom: 1px solid;
+}
+
+/***********************************************************************************
+  
+Icons
+  
+************************************************************************************/
+
+@font-face { 
+    font-family: "ionicons"; 
+    src: url("../icons/ionicons.eot?v=1.4.1"); 
+    src: url("../icons/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
+         url("../icons/ionicons.ttf?v=1.4.1") format("truetype"), 
+         url("../icons/ionicons.woff?v=1.4.1") format("woff"), 
+         url("../icons/ionicons.svg?v=1.4.1#Ionicons") format("svg"); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+.icon { 
+    font-family: "ionicons"; 
+    speak: none; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    text-rendering: auto; 
+    line-height: 1; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    
+    display: inline-block; 
+}
+
+.icon.twitter:before { content: "\f243"; }
+.icon.facebook:before { content: "\f231"; }
+.icon.email:before { content: "\f10f"; }
+.icon.submit:before { content: "\f16c"; }
+
+/***********************************************************************************
+  
+Containers
+  
+************************************************************************************/
+
+.row {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.content {
+    width: 500px;
+    
+    margin-left: 200px;
+}
+
+/***********************************************************************************
+  
+Body
+  
+************************************************************************************/
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+body::after {
+    border-right: 1px dashed;
+    
+    width: 1px;
+    height: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 100px;
+    z-index: -1;
+    
+    content: "";
+}
+
+/***********************************************************************************
+  
+Header
+  
+************************************************************************************/
+
+#header {
+    border-bottom: 1px dashed;
+    
+    line-height: 200px;
+    
+    display: none;
+}
+
+#header .content span.logo {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 80px;
+    
+    display: block;
+    
+    padding-left: 100px;
+}
+
+#header .status {
+    height: 1px;
+    
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+#header .status span {
+    border-left: 1px solid;
+    
+    font-size: 12px;
+    line-height: 20px;
+    
+    width: 1px;
+    height: 21px;
+    
+    padding-left: 5px;
+    
+    position: absolute;
+    top: -10px;
+    right: -6px;
+}
+
+/***********************************************************************************
+  
+Intro
+  
+************************************************************************************/
+
+#intro {
+    padding: 83px 0 100px;
+    
+    display: none;
+}
+
+/***********************************************************************************
+  
+Post Subscribe
+  
+************************************************************************************/
+
+#post-subscribe h1 {
+    margin-bottom: 32px;
+}
+
+/***********************************************************************************
+  
+Subscribe
+  
+************************************************************************************/
+
+#subscribe {
+    margin: 15px 0 40px;
+}
+
+input[type="text"],
+input[type="email"] {
+    background: none;
+    outline: none;
+    
+    border-radius: 20px 0 0 20px;
+    border: none;
+    border: 1px solid;
+    
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 38px;
+    
+    width: 200px;
+    height: 38px;
+    
+    padding: 0 20px;
+    
+    -webkit-appearance: none;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.button {
+    outline: none;
+    
+    border-radius: 50%;
+    border: none;
+    
+    font-size: 38px;
+    line-height: 19px;
+    text-align: center;
+    
+    width: 40px;
+    height: 40px;
+    
+    padding: 0;
+    
+    position: absolute;
+    top: 0;
+    left: 221px;
+    
+    cursor: pointer;
+    
+    transition-duration: 0.25s;
+}
+
+#post-subscribe {
+    display: none;
+}
+
+/***********************************************************************************
+  
+Social
+  
+************************************************************************************/
+
+#social a.icon {
+    border-radius: 50%;
+    
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    
+    width: 40px;
+    height: 40px;
+    
+    float: left;
+    margin-right: -5px;
+}

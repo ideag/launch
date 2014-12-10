@@ -1,0 +1,136 @@
+
+/***********************************************************************************
+  
+Typography
+  
+************************************************************************************/
+
+body {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+p a {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/***********************************************************************************
+  
+Body
+  
+************************************************************************************/
+
+body {
+    background-image: url('../images/bg.jpg');
+}
+
+body::after {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/***********************************************************************************
+  
+Header
+  
+************************************************************************************/
+
+#header {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+#header .status {
+    background-color: #ffffff;
+}
+
+#header .status span {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+/***********************************************************************************
+  
+Forms
+  
+************************************************************************************/
+
+input[type="text"],
+input[type="email"] {
+    border-color: #ffffff;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.85);
+}
+
+:-moz-placeholder { 
+   color: rgba(255, 255, 255, 0.85); 
+}
+
+::-moz-placeholder {
+   color: rgba(255, 255, 255, 0.85);  
+}
+
+:-ms-input-placeholder {  
+   color: rgba(255, 255, 255, 0.85); 
+}
+
+.button {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.button:hover {
+    background-color: #49b266;
+    color: #ffffff;
+}
+
+/***********************************************************************************
+  
+Social
+  
+************************************************************************************/
+
+#social a.icon {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+#social a.icon:nth-child(1) {
+    background-color: #dcdcdc;
+}
+
+#social a.icon:nth-child(2) {
+    background-color: #f1f1f1;
+}
+
+#social a.icon:nth-child(3) {
+    background-color: #ffffff;
+}
+
+#social a.icon:hover {
+    color: #ffffff;
+}
+
+#social a.icon.twitter:hover {
+    background-color: #55acee;
+}
+
+#social a.icon.facebook:hover {
+    background-color: #4e69a2;
+}
+
+#social a.icon.email:hover {
+    background-color: #49b266;
+}
