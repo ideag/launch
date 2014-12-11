@@ -131,6 +131,10 @@ Social
     background-color: #4e69a2;
 }
 
+#social a.icon.github:hover {
+    background-color: #999999;
+}
+
 #social a.icon.email:hover {
     background-color: #49b266;
 }

@@ -36,7 +36,7 @@ $(function() {
             if (isValid) {
                 // If email is is valid, submit form through ajax
                 $.ajax({
-                    type: "GET",
+                    type: "POST",
                     url: $this.attr('action'),
                     data: $this.serialize(),
                     dataType: 'json',
