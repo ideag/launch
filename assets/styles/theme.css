@@ -138,3 +138,7 @@ Social
 #social a.icon.email:hover {
     background-color: #49b266;
 }
+
+#pre-subscribe {
+    text-shadow: 0px 0px 4px #000000;
+}
