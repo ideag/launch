@@ -40,11 +40,11 @@
                     <div class="row" id="copy">
                         <h1>Some say, I build <strong>WordPress</strong> plugins with <strong>character</strong>.</h1>
                         <p>Check them out while I am building out this site.<br/>
-                            <a href="http://tiny.lt/gust" target="_blank">Gust</a>, 
-                            <a href="http://tiny.lt/tinycoffee" target="_blank">tinyCoffee</a>, 
-                            <a href="http://tiny.lt/tinyrelated" target="_blank">tinyRelated</a>, 
-                            <a href="http://tiny.lt/tinytoc" target="_blank">tinyTOC</a> and 
-                            <a href="http://tiny.lt/tinyip" target="_blank">tinyIP</a>
+                            <a href="http://arunas.co/gust" target="_blank">Gust</a>, 
+                            <a href="http://arunas.co/tinycoffee" target="_blank">tinyCoffee</a>, 
+                            <a href="http://arunas.co/tinyrelated" target="_blank">tinyRelated</a>, 
+                            <a href="http://arunas.co/tinytoc" target="_blank">tinyTOC</a> and 
+                            <a href="http://arunas.co/tinyip" target="_blank">tinyIP</a>
                         </p>
                         <p>I can build a plugin for you, too - just drop me a note via contacts below.</p>
                     </div>
