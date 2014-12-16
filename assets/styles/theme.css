@@ -142,3 +142,7 @@ Social
 #pre-subscribe, .logo  { 
     text-shadow: 0px 0px 16px #000000;
 }
+
+.logo {
+  font-size: 150%;
+}
