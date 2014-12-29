@@ -83,11 +83,11 @@ Icons
 
 @font-face { 
     font-family: "ionicons"; 
-    src: url("./icons/ionicons.eot?v=1.4.1"); 
-    src: url("./icons/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
-         url("./icons/ionicons.ttf?v=1.4.1") format("truetype"), 
-         url("./icons/ionicons.woff?v=1.4.1") format("woff"), 
-         url("./icons/ionicons.svg?v=1.4.1#Ionicons") format("svg"); 
+    src: url("./assets/icons/ionicons.eot?v=1.4.1"); 
+    src: url("./assets/icons/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
+         url("./assets/icons/ionicons.ttf?v=1.4.1") format("truetype"), 
+         url("./assets/icons/ionicons.woff?v=1.4.1") format("woff"), 
+         url("./assets/icons/ionicons.svg?v=1.4.1#Ionicons") format("svg"); 
     font-weight: normal; 
     font-style: normal; 
 }
