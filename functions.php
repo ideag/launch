@@ -134,10 +134,10 @@
         self::$options['mailchimp_after'] = __( 'Thanks for <strong>signing up</strong>. Check your email to <strong>confirm</strong> your subscription.', 'launch' );
       }      
       if ( !self::$options['logo'] ) {
-        self::$options['logo'] = get_stylesheet_directory_uri().'/assets/images/logo.png';
+        self::$options['logo'] = get_template_directory_uri().'/assets/images/logo.png';
       }
       if ( !self::$options['favicon'] ) {
-        self::$options['favicon'] = get_stylesheet_directory_uri().'/assets/images/favicon.png';
+        self::$options['favicon'] = get_template_directory_uri().'/assets/images/favicon.png';
       }
       $real_options = array();
       foreach(self::$options as $option_id => $value ) {
@@ -154,12 +154,12 @@
       return $output;
     }
     public static function scripts() {
-      wp_register_script( 'launch-script', get_stylesheet_directory_uri().'/assets/scripts/main.js', array( 'jquery' ), false, true );
+      wp_register_script( 'launch-script', get_template_directory_uri().'/assets/scripts/main.js', array( 'jquery' ), false, true );
       wp_enqueue_script( 'launch-script' );
     }
     public static function styles() {
       wp_register_style( 'launch-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' );
-      wp_register_style( 'launch-style', get_stylesheet_uri(), array( 'launch-fonts' ) );
+      wp_register_style( 'launch-style', get_template_uri(), array( 'launch-fonts' ) );
       wp_enqueue_style( 'launch-style' );
     }
     public static function head() {
