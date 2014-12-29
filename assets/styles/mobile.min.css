@@ -1,0 +1,1 @@
+@media (max-width:800px){.content{margin-left:10%}body::after{display:none}}@media (max-width:600px){.content{width:80%;margin-left:10%}body::after{display:none}}@media (max-width:300px){input[type=email],input[type=text]{width:180px}.button{left:201px}}

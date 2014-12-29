@@ -109,7 +109,6 @@ Icons
 
 .icon.twitter:before { content: "\f243"; }
 .icon.facebook:before { content: "\f231"; }
-.icon.github:before { content: "\f233"; }
 .icon.email:before { content: "\f10f"; }
 .icon.submit:before { content: "\f16c"; }
 
@@ -173,7 +172,6 @@ Header
 }
 
 #header .content span.logo {
-    background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 80px;
