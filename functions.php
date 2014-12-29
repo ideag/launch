@@ -159,7 +159,7 @@
     }
     public static function styles() {
       wp_register_style( 'launch-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' );
-      wp_register_style( 'launch-style', get_bloginfo('template_url'), array( 'launch-fonts' ) );
+      wp_register_style( 'launch-style', get_bloginfo('template_url').'/style.css', array( 'launch-fonts' ) );
       wp_enqueue_style( 'launch-style' );
     }
     public static function head() {
