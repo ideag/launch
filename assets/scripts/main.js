@@ -18,7 +18,7 @@ Mailchimp
   
 ************************************************************************************/
 
-var emailfilter=/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)jQuery/i;
+var emailfilter=/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i;
 
 jQuery(function() {
     if (jQuery('form').length > 0) {
@@ -32,7 +32,6 @@ jQuery(function() {
                 jQuery("#email").addClass('error');
                 isValid = false;
             }
-
             if (isValid) {
                 // If email is is valid, submit form through ajax
                 jQuery.ajax({

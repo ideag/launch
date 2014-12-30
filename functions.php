@@ -1,10 +1,4 @@
 <?php 
-  // TO DO - hook into theme customizer
-  // TO DO - load options on init
-  // TO DO - support the new title tag method for WP 4.1
-  // TO DO - recognize/show moar social networks
-  // TO DO - auto merge stylesheets, include logo/bg info on save.
-  // TO DO - test mailchimp integration, integrate with wp-mailchimp(?)
 
   add_action( 'init', array( 'launch', 'init' ) );
   class launch {
@@ -86,7 +80,8 @@
                 'default' => self::$options['mailchimp_user'],
               ),
               'control' => array(
-                'label' => __( 'Mailchimp User ID', 'launch' ),
+                'label' => __( 'Mailchimp API key', 'launch' ),
+                'description' => sprintf ( __( 'Get your API key <a href="%1$s" target="_blank">here</a>', 'launch' ), 'http://kb.mailchimp.com/accounts/management/about-api-keys#Find-or-Generate-Your-API-Key' ),
               ),
               'type' => 'text',
             ),
@@ -95,7 +90,7 @@
                 'default' => self::$options['mailchimp_list'],
               ),
               'control' => array(
-                'label' => __( 'Mailchimp List ID', 'launch' ),
+                'label' => __( 'Mailchimp list ID', 'launch' ),
               ),
               'type' => 'text',
             ),
@@ -169,6 +164,45 @@
       wp_register_style( 'launch-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' );
       wp_register_style( 'launch-style', get_template_directory_uri().'/style.css', array( 'launch-fonts' ) );
       wp_enqueue_style( 'launch-style' );
+    }
+    public static function mc_api_url( $api, $list ) {
+      $response = get_transient( 'launch_mailchimp_'.$list );
+      if ( !$response ) {
+        $dc = explode( '-', $api);
+        $dc = $dc[1];
+        $url = "https://{$dc}.api.mailchimp.com/2.0/";
+        $url .= 'lists/list.json';
+        $args = array(
+          'apikey' => $api,
+          'filters' => array(
+            'list_id' => $list,
+          ),
+        );
+        $args = json_encode($args);
+        $response = wp_remote_post( $url, array( 'body' => $args ) );
+        if ( isset( $response['body'] ) ) {
+          $response = json_decode( $response['body'], true );
+        } else {
+          $response = false;
+        }
+        if ( isset( $response['data'] ) ) {
+          $response = array_shift( $response['data'] );
+        } else {
+          $response = false;
+        }
+        if ( isset( $response['subscribe_url_long'] ) ) {
+          $response = $response['subscribe_url_long'];
+        } else {
+          $response = false;
+        }
+        if ($response) {
+          $response = str_replace( '/subscribe', '/subscribe/post-json', $response );
+  //        $response = add_query_arg( array( 'c' => '?' ), $response );
+          $response .= '&c=?';
+        }
+        set_transient( 'launch_mailchimp_'.$list, 1 * HOUR_IN_SECONDS );
+      }
+      return $response;
     }
     public static function head() {
       $tags = array(

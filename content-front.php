@@ -6,7 +6,7 @@
 					</div>
 <?php if ( get_theme_mod( 'mailchimp_user' ) && get_theme_mod( 'mailchimp_list' ) ) : ?>
 					<div class="row" id="subscribe">
-						<form action="//<?php echo get_theme_mod( 'mailchimp_list' ); ?>.<?php echo get_theme_mod( 'mailchimp_user' ); ?>.list-manage.com/subscribe/post-json?u=<?php echo get_theme_mod( 'mailchimp_user' ); ?>&id=<?php echo get_theme_mod( 'mailchimp_list' ); ?>&c=?" method="get">
+						<form action="<?php echo launch::mc_api_url( get_theme_mod( 'mailchimp_user' ), get_theme_mod( 'mailchimp_list' ) ); ?>" method="get">
 							<input type="email" name="EMAIL" id="email">
 							<button type="submit" class="button icon submit" name="subscribe"></button>
 						</form>

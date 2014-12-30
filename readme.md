@@ -16,3 +16,16 @@ http://arunas.co/launch
 - YES: Use for any personal, business or client projects.
 - NO: Reproduce, distribute, sell, transfer or sub-license to any third party.
 - NO: Remove or replace author credits within any template files.
+
+## Install Notes
+
+Use Markdown syntax (`**boldtext**`) to mark bold words in blog/post title - they will be auto converted.
+
+Use theme customizer  (`WP Admin > Appearance > Customize`) to setup background, logo, favicon, and Mailchimp integration
+
+Use menu editor (`WP Admin > Appearace > Menu`) to setup social links. At the moment email, Facebook, Twitter and Github are supported. 
+
+## Change Log
+
+* 1.0.1 - fixed Mailchimp form 
+* 1.0.0 - initial release
