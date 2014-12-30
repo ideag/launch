@@ -11,8 +11,8 @@
 				<span<?php echo get_theme_mod( 'logo' )?' class="logo"':''; ?>><?php echo get_bloginfo( 'name', 'display' ); ?></span>
 			</div>
 			<!-- Status: Change the numbers below to reflect your project status. -->
-			<div class="status" style="width: <?php echo get_theme_mod( 'percent' ); ?>%;">
-				<span><?php echo get_theme_mod( 'percent' ); ?>%</span>
+			<div class="status" style="width: <?php echo get_theme_mod( 'percent', launch::$options['percent'] ); ?>%;">
+				<span><?php echo get_theme_mod( 'percent', launch::$options['percent'] ); ?>%</span>
 			</div>
 		</header>
 		<div class="row" id="intro">

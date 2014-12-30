@@ -24,21 +24,9 @@
       add_action( 'wp_enqueue_scripts', array( 'launch', 'styles' ) );
       add_action( 'wp_enqueue_scripts', array( 'launch', 'scripts' ) );
       register_nav_menu( 'social', __( 'Social links', 'launch' ) );
+      add_filter( 'bloginfo', array( 'launch', 'title' ), 10, 2); 
       require_once( 'includes/options.php' );
       self::init_settings();
-      // Setup the Theme Customizer settings and controls...
-      add_action( 'customize_register' , array( 'launch_Options' , 'register' ) );
-      // Output custom CSS to live site
-      add_action( 'wp_head' , array( 'launch_Options' , 'header_output' ) );
-      // Enqueue live preview javascript in Theme Customizer admin screen
-//      add_action( 'customize_preview_init' , array( 'launch_Options' , 'live_preview' ) );
-      $args = array(
-        'default-color' => '000000',
-        'default-image' => '%1$s/assets/images/bg.jpg',
-      );
-      add_theme_support( 'custom-background', $args );
-      add_theme_support( 'title-tag' );
-      add_theme_support( 'automatic-feed-links' );
       if ( ! isset( $content_width ) ) $content_width = 500;
     }
     public static function init_settings() {
@@ -51,7 +39,6 @@
             'percent' => array(
               'setting' => array(
                 'default' => self::$options['percent'],
-                'sanitize_callback' => 'intval',
               ),
               'control' => array(
                 'label' => __( 'Percent completed', 'launch' ),
@@ -125,6 +112,18 @@
         ),
       );
       launch_Options::init( $settings );
+      // Setup the Theme Customizer settings and controls...
+      add_action( 'customize_register' , array( 'launch_Options' , 'register' ) );
+      // Output custom CSS to live site
+      add_action( 'wp_head' , array( 'launch_Options' , 'header_output' ) );
+      // Enqueue live preview javascript in Theme Customizer admin screen
+      $args = array(
+        'default-color' => '000000',
+        'default-image' => '%1$s/assets/images/bg.jpg',
+      );
+      add_theme_support( 'custom-background', $args );
+      add_theme_support( 'title-tag' );
+      add_theme_support( 'automatic-feed-links' );
     }
     public static function init_options() {
       if ( !self::$options['name'] ) {
@@ -149,6 +148,15 @@
 //      self::$options = wp_parse_args( $real_options, self::$options );
       self::$options = apply_filters( 'launch_options', self::$options );
     }
+    public static function title($output, $show) {  
+      if ( 'name' == $show ) {
+        $output = launch::strong_filter($output);
+      }
+      if ( doing_action( 'wp_head' ) ) {
+        $output = strip_tags( $output );
+      }
+      return $output;
+    }    
     public static function strong_filter( $output ) {
       $output = preg_replace( '/\*\*(.+?)\*\*/ims', '<strong>$1</strong>', $output );
       return $output;
@@ -156,10 +164,10 @@
     public static function scripts() {
       wp_register_script( 'launch-script', get_template_directory_uri().'/assets/scripts/main.js', array( 'jquery' ), false, true );
       wp_enqueue_script( 'launch-script' );
-    }
+    } 
     public static function styles() {
       wp_register_style( 'launch-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' );
-      wp_register_style( 'launch-style', get_bloginfo('template_url').'/style.css', array( 'launch-fonts' ) );
+      wp_register_style( 'launch-style', get_template_directory_uri().'/style.css', array( 'launch-fonts' ) );
       wp_enqueue_style( 'launch-style' );
     }
     public static function head() {
